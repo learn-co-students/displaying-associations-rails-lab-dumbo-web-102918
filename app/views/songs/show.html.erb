@@ -1,0 +1,12 @@
+<h1><%= @song.title %></h1>
+<ul>
+<% @artists.each do |artist| %>
+  <% if artist.id == @song.artist_id %>
+    <li><%= link_to artist.name, artist %></li>
+  <% end %>
+<% end %>
+</ul>
+<br />
+<%= link_to "Edit Song", edit_song_path %><br>
+<%= button_to "Delete", @song, method: :delete %><br>
+<%= link_to "Home", songs_path %>
